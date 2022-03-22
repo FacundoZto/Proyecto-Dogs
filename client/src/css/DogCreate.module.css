@@ -1,0 +1,117 @@
+.contenedor {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+}
+
+.prueba {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(27, 27, 27, 0.7);
+  width: 700px;
+  height: 900px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 20px;
+}
+
+.home {
+	border: none;
+	background-color: burlywood;
+	color: black;
+	padding: 6px 15px;
+	font-size: 15px;
+	cursor: pointer;
+	font-family: unset;
+	font-weight: 600;
+	/*filter: drop-shadow(2px 4px 6px black);*/
+	margin-top: 30px;
+	width: 100px;
+	height: 50px;
+}
+
+	.home:hover {
+	  background-color: burlywood;
+	  background-color: lightgoldenrodyellow;
+	}
+
+.formContenedor {
+	text-align: end;
+	background-color: rgb(27, 27, 27);
+	border: solid lightgoldenrodyellow 1px;
+	margin-top: 40px;
+	/*filter: drop-shadow(4px 6px 8px black);*/
+}
+
+.formContenedor h2 {
+	text-align: center;
+	color: beige;
+}
+
+.formContenedor div {
+	margin-bottom: 15px;
+	padding: 10px;
+}
+
+.formContenedor label {
+	color: ghostwhite;
+	margin-right: 10px;
+}
+
+.info section {
+	color: brown;
+	position: absolute;
+	margin-left: 30px;
+}
+
+.info select {
+	background-color: lightgray;
+}
+
+.temperamentos {
+	width: 310px;
+	color: ghostwhite;
+	text-align: center;
+}
+
+.borrar {
+	border: none;
+	background-color: burlywood;
+	color: black;
+	padding: 6px 10px;
+	margin-top: 5px;
+	font-size: 15px;
+	cursor: pointer;
+	font-family: unset;
+	font-weight: 600;
+	filter: drop-shadow(2px 4px 6px black);
+}
+
+.crear {
+	display: flex;
+	justify-content: center;
+}
+
+.crear button[disabled] {
+	opacity: 0.5;
+	background-color: brown;
+}
+
+.crear button {
+	border: none;
+	background-color: burlywood;
+	color: black;
+	padding: 6px 10px;
+	margin-top: 5px;
+	font-size: 15px;
+	cursor: pointer;
+	font-family: unset;
+	font-weight: 600;
+	filter: drop-shadow(2px 4px 6px black);
+}
+/*.crear button:hover {
+  background-color: lightgoldenrodyellow;
+  color: black;
+}*/

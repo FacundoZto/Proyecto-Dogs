@@ -1,0 +1,68 @@
+.contenedor {
+	/*background: url('./images/patitas.png');
+	height: 100vh*/;
+
+	/*width:100%;
+   	height:100%;
+   	position:absolute;
+   	top:0;
+   	bottom:0;*/
+}
+
+.encabezado {
+	background-color: #1b1b1b;
+	height: 70px;
+}
+
+/*rgb(6, 19, 23)*/
+.contenedorFiltros {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 30px;
+}
+
+.contenedorFiltros select {
+	padding: 5px;
+	margin: 5px;
+	font-family: unset;
+	font-size: 15px;
+	background-color: navajowhite;
+	color: black;
+	border-radius: 5px;
+	filter: drop-shadow(2px 4px 6px black);
+	font-weight: 600;
+}
+
+.paginas {
+	display: flex;
+	justify-content: center;
+	padding: 30px;
+}
+
+.contenedorDogs {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-color: rgb(0, 0, 0, 0.5);
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+/*.loading {
+	border: 16px solid #f3f3f3;
+	border-top: 16px solid burlywood; 
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}*/
+
+.loading {
+	filter: invert(1) sepia(1) saturate(200%) contrast(200%);
+	width: 350px;
+	height: 350px;
+}

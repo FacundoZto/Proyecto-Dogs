@@ -1,0 +1,38 @@
+.contenedor {
+	display: flex;
+	justify-content: space-evenly;
+	/*padding-top: 10px;
+	padding-bottom: 10px;*/
+	height: inherit;
+	align-items: center;
+}
+
+.barra {
+	width: 250px;
+	height: 29px;
+	background-color: floralwhite;
+	color: black;
+	font-size: 15px;
+	margin-right: 5px;
+	/*border: 2px solid black;*/
+}
+
+/*.barra::placeholder {
+	color: black;
+}*/
+
+.contenedor button {
+	/*border: 2px solid white;*/
+	border: none;
+	background-color: burlywood;
+	color: black;
+	padding: 6px 15px;
+	font-size: 15px;
+	cursor: pointer;
+	font-family: unset;
+	font-weight: 600;
+}
+
+.contenedor button:hover {
+  color: white;
+}
