@@ -18,35 +18,28 @@ const DogDetail = () => {
 
 	return(
 		<div className={s.contenedor} >
-			<div className={s.prueba}>
 			<Link to='/home'>
-				<button className={s.home} >Back</button>
+				<button className={s.home} >GO BACK</button>
 			</Link>
-
+			
+			{dog.name ? 
 			<div className={s.subcontenedor} >
-				{dog.name ? 
-				<div>
-					<h3>{dog.name}</h3>
+			<div>
+				<img src={dog.image} alt="" />
+				<h2>{dog.name}</h2>
+				<p>{dog.temperaments ? dog.temperaments.map((t, i) => ( 
+				i === dog.temperaments.length-1 ? `${t.name}` : `${t.name}, ` )) : dog.temperament}</p>
 
-					<img src={dog.image} alt="" width='350px' height='300px' />
+				<p>Height: {dog.height} cms</p>
 
-					<p>{dog.temperaments ? dog.temperaments.map((t, i) => ( 
-					i === dog.temperaments.length-1 ? `${t.name}` : `${t.name}, ` )) : dog.temperament}</p>
+				<p> Weight: {dog.weight} kgs</p>
 
-					<p>Height: {dog.height} cms</p>
-
-					<p> Weight: {dog.weight} kgs</p>
-
-					<p>Life span: {dog.life_span.includes('years') ? dog.life_span : dog.life_span + ' years'}</p>
-				</div>
-
-				:
-				<div className={s.loading}>
-					<img src={loading} alt=""/>
-				</div>
-				}
+				<p>Life span: {dog.life_span.includes('years') ? dog.life_span : dog.life_span + ' years'}</p>
 			</div>
 			</div>
+			:
+			<img src={loading} alt="" />
+			}	
 		</div>
 		)
 };

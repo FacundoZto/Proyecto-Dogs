@@ -2,52 +2,54 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: 100vh;
+	/*height: 100vh;*/
 }
 
 .prueba {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: rgba(27, 27, 27, 0.7);
+	/*background-color: rgba(27, 27, 27, 0.7);
   width: 700px;
   height: 900px;
   margin-top: auto;
   margin-bottom: auto;
-  border-radius: 20px;
+  border-radius: 20px;*/
 }
 
 .home {
 	border: none;
-	background-color: burlywood;
+	border-radius: 50px;
+	background-color: #76c893;
 	color: black;
 	padding: 6px 15px;
-	font-size: 15px;
+	font-size: 20px;
 	cursor: pointer;
-	font-family: unset;
-	font-weight: 600;
-	/*filter: drop-shadow(2px 4px 6px black);*/
+	font-family: 'Montserrat';
+	font-weight: 500;
+	filter: drop-shadow(1px 2px 2px grey);
 	margin-top: 30px;
 	width: 100px;
-	height: 50px;
 }
 
 	.home:hover {
-	  background-color: burlywood;
-	  background-color: lightgoldenrodyellow;
+	  color: white;
 	}
 
 .formContenedor {
 	text-align: end;
-	background-color: rgb(27, 27, 27);
-	border: solid lightgoldenrodyellow 1px;
+	background-color: #eeeeed;
+	filter: drop-shadow(1px 2px 2px grey);
+	/*border: solid lightgoldenrodyellow 1px;*/
 	margin-top: 40px;
+	border-radius: 10px;
 	/*filter: drop-shadow(4px 6px 8px black);*/
 }
 
-.formContenedor h2 {
+.formContenedor h3 {
 	text-align: center;
-	color: beige;
+	color: #202326;
+	font-family: 'Montserrat';
 }
 
 .formContenedor div {
@@ -56,8 +58,9 @@
 }
 
 .formContenedor label {
-	color: ghostwhite;
+	color: #202326;
 	margin-right: 10px;
+	font-family: 'Montserrat';
 }
 
 .info section {
@@ -67,26 +70,29 @@
 }
 
 .info select {
-	background-color: lightgray;
+	background-color: white;
+	font-family: 'Montserrat';
 }
 
 .temperamentos {
 	width: 310px;
-	color: ghostwhite;
+	color: #202326;
 	text-align: center;
+	font-family: 'Montserrat';
 }
 
 .borrar {
 	border: none;
-	background-color: burlywood;
+	background-color: #76c893;
 	color: black;
 	padding: 6px 10px;
 	margin-top: 5px;
 	font-size: 15px;
 	cursor: pointer;
-	font-family: unset;
-	font-weight: 600;
-	filter: drop-shadow(2px 4px 6px black);
+	font-family: 'Montserrat';
+	font-weight: 500;
+	filter: drop-shadow(1px 2px 2px grey);
+	border-radius: 50px;
 }
 
 .crear {
@@ -96,20 +102,22 @@
 
 .crear button[disabled] {
 	opacity: 0.5;
-	background-color: brown;
+	background-color: #76c893;
+	border-radius: 50px;
 }
 
 .crear button {
 	border: none;
-	background-color: burlywood;
+	background-color: #76c893;
 	color: black;
 	padding: 6px 10px;
 	margin-top: 5px;
 	font-size: 15px;
 	cursor: pointer;
-	font-family: unset;
+	font-family: 'Montserrat';
 	font-weight: 600;
-	filter: drop-shadow(2px 4px 6px black);
+	filter: drop-shadow(1px 2px 2px grey);
+	border-radius: 50px;
 }
 /*.crear button:hover {
   background-color: lightgoldenrodyellow;

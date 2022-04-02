@@ -2,7 +2,6 @@ import {useEffect, useState} from 'react';
 import {getAllDogs, orderDogs, filterDogs, getTemperaments, filterByTemperament} from '../redux/actions.js';
 import {useDispatch, useSelector} from 'react-redux';
 import DogCard from './DogCard.jsx';
-import SearchBar from './SearchBar.jsx';
 import Paginado from './Paginado.jsx';
 import loading from '../css/images/loading-gif.gif';
 import s from '../css/Home.module.css';
@@ -45,10 +44,7 @@ const Home = (props) => {
 
 	return(
 		<div className={s.contenedor} >
-			<header className={s.encabezado} >
-				<SearchBar />
-			</header>
-
+			
 			<div className={s.contenedorFiltros} >
 				<div>
 					<select name="temperament" defaultValue='Filter by temperament'

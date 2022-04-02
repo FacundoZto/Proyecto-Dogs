@@ -1,35 +1,50 @@
 .card {
 	width: 300px;
-	height: 400px;
-	margin: 8px;
-	/*background-color: rgb(0, 0, 0, 0.5);
-	filter: drop-shadow(2px 4px 6px black);
-	margin: 8px;
-	border-radius: 10px;*/
+	height: 430px;
+	margin: 15px 8px 15px 8px;
+	background-color: #EAEAE9;
+	filter: drop-shadow(1px 2px 2px grey);
+	-webkit-transition:all .2s ease; /* Safari y Chrome */
+	-moz-transition:all .2s ease; /* Firefox */
+	-o-transition:all .2s ease; /* IE 9 */
+	-ms-transition:all .2s ease; /* Opera */
+}
+
+.card:hover {
+	/*filter: drop-shadow(1px 2px 3px burlywood);*/
+	background-color: #76c893;
+	-webkit-transform:scale(1.05);
+	-moz-transform:scale(1.05);
+	-ms-transform:scale(1.05);
+	-o-transform:scale(1.05);
+	transform:scale(1.05);
 }
 
 .card div {
-	text-align: center;
+	/*text-align: center;*/
+	text-align: -webkit-center;
 }
 
 .card h3 {
-	color: navajowhite;
+	color: black;
+	font-family: 'Montserrat';
 }
 
 .card p {
-	color: ghostwhite;
+	color: black;
+	/*text-align: center;*/
+	font-size: 15px;
+    width: 280px;
+    display: table-cell;
+    font-family: 'Montserrat';
 }
 
 .imagen {
-	filter: drop-shadow(2px 4px 6px black);
-}
-
-.imagen:hover {
-	/*filter: drop-shadow(1px 2px 3px burlywood);*/
-	border: solid burlywood 1px;
+	width: 300px;
+	height: 220px;
 }
 
 .error {
-	border-radius: 10px;
-	border: solid burlywood 1px;
+	width: 300px;
 }
+

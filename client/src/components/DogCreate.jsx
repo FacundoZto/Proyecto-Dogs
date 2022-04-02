@@ -166,7 +166,7 @@ const DogCreate = (props) => {
 			</div>
 
 			<div className={s.formContenedor} >
-				<h2>Create Dog</h2>
+				<h3>Create Dog</h3>
 				<form action="" onSubmit={handleSubmit}>
 					<div className={s.info} >
 						<label htmlFor="">Name: </label>
@@ -221,7 +221,7 @@ const DogCreate = (props) => {
 							i !== input.temperament.length - 1 ? t + ', ' : t))}
 						</div>
 						<button onClick={handleDeleteTemp} className={s.borrar} >
-							Remove temperament
+							Remove Temperament
 						</button>
 					</div>
 
