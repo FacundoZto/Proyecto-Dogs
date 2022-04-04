@@ -32,19 +32,19 @@ const Paginado = (props) => {
 		<div className={s.contenedor} >
 			
 			{props.currentPage === 1 ? 
-				<button disabled className={s.disabled}>Start</button> :  
-				<button onClick={initialPage} className={s.enabled}>Start</button>}
-			{props.currentPage === 1 ? <button disabled className={s.disabled}>Back</button> :  
-				<button onClick={prevPage} className={s.enabled}>Back</button>}
-				<label className={s.numero} >
+				<button disabled className={!props.mode ? s.disabled : s.disabledDark}>Start</button> :  
+				<button onClick={initialPage} className={!props.mode ? s.enabled : s.enabledDark}>Start</button>}
+			{props.currentPage === 1 ? <button disabled className={!props.mode ? s.disabled : s.disabledDark}>Back</button> :  
+				<button onClick={prevPage} className={!props.mode ? s.enabled : s.enabledDark}>Back</button>}
+				<label className={!props.mode ? s.numero : s.numeroDark} >
 				{pageNumbers && pageNumbers.slice(props.currentPage - 1, props.currentPage)} of {pageNumbers.length}
 				</label>
 			{props.currentPage === pageNumbers.length ? 
-				<button disabled className={s.disabled}>Next</button> : 
-				<button onClick={nextPage} className={s.enabled}>Next</button>}
+				<button disabled className={!props.mode ? s.disabled : s.disabledDark}>Next</button> : 
+				<button onClick={nextPage} className={!props.mode ? s.enabled : s.enabledDark}>Next</button>}
 			{props.currentPage === pageNumbers.length ? 
-				<button disabled className={s.disabled}>End</button> : 
-				<button onClick={lastPage} className={s.enabled}>End</button>}
+				<button disabled className={!props.mode ? s.disabled : s.disabledDark}>End</button> : 
+				<button onClick={lastPage} className={!props.mode ? s.enabled : s.enabledDark}>End</button>}
 			
 		</div>
 	)

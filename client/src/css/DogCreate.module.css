@@ -38,18 +38,19 @@
 
 .formContenedor {
 	text-align: end;
-	background-color: #eeeeed;
-	filter: drop-shadow(1px 2px 2px grey);
+	/*background-color: #eeeeed;*/
+	/*filter: drop-shadow(1px 2px 2px grey);*/
 	/*border: solid lightgoldenrodyellow 1px;*/
 	margin-top: 40px;
 	border-radius: 10px;
 	/*filter: drop-shadow(4px 6px 8px black);*/
 }
 
-.formContenedor h3 {
+.formContenedor h2 {
 	text-align: center;
 	color: #202326;
 	font-family: 'Montserrat';
+	filter: drop-shadow(1px 2px 2px grey);
 }
 
 .formContenedor div {
@@ -58,7 +59,8 @@
 }
 
 .formContenedor label {
-	color: #202326;
+	/*color: #202326;*/
+	color: black;
 	margin-right: 10px;
 	font-family: 'Montserrat';
 }
@@ -69,9 +71,18 @@
 	margin-left: 30px;
 }
 
+.info input {
+	border-radius: 3px;
+	border: none;
+	filter: drop-shadow(1px 2px 2px grey);
+}
+
 .info select {
 	background-color: white;
 	font-family: 'Montserrat';
+	border-radius: 3px;
+	border: none;
+	filter: drop-shadow(1px 2px 2px grey);
 }
 
 .temperamentos {
@@ -79,6 +90,7 @@
 	color: #202326;
 	text-align: center;
 	font-family: 'Montserrat';
+	filter: none;
 }
 
 .borrar {

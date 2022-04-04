@@ -5,7 +5,7 @@ import error from '../css/images/error404.png';
 const DogCard = (props) => {
 
 	return(
-		<div className={s.card} >
+		<div className={!props.mode ? s.card : s.card2} >
 			<div>
 				{props.image ? 
 				<Link to={`/detail/${props.id}`}>

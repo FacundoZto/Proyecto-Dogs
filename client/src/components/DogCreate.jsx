@@ -157,7 +157,7 @@ const DogCreate = (props) => {
 	}
 
 	return(
-		<div className={s.contenedor} >
+		<div className={s.contenedor}>
 			<div className={s.prueba}>
 			<div>
 				<Link to='/home'>
@@ -166,7 +166,7 @@ const DogCreate = (props) => {
 			</div>
 
 			<div className={s.formContenedor} >
-				<h3>Create Dog</h3>
+				<h2>Create Dog</h2>
 				<form action="" onSubmit={handleSubmit}>
 					<div className={s.info} >
 						<label htmlFor="">Name: </label>

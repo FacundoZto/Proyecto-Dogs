@@ -1,3 +1,8 @@
+body {
+	background-color: #EAEAE9;
+	background-color: var(--bg);
+}
+
 .contenedor {
 	/*background: url('./images/patitas.png');
 	height: 100vh*/;
@@ -14,6 +19,35 @@
 	height: 70px;
 }
 
+.darkMode {
+	padding: 5px;
+	margin: 5px;
+	font-family: 'Montserrat';
+	font-size: 14px;
+	background-color: #192936;
+	color: whitesmoke;
+	/*border-radius: 5px;*/
+	filter: drop-shadow(1px 2px 2px grey);
+	border-radius: 50px;
+	border: none;
+	cursor: pointer;
+	width: 60px;
+}
+
+.lightMode {
+	padding: 5px;
+	margin: 5px;
+	font-family: 'Montserrat';
+	font-size: 14px;
+	background-color: #76c893;
+	color: whitesmoke;
+	/*border-radius: 5px;*/
+	border-radius: 50px;
+	border: none;
+	cursor: pointer;
+	width: 60px;
+}
+
 /*rgb(6, 19, 23)*/
 .contenedorFiltros {
 	display: flex;
@@ -25,12 +59,32 @@
 .contenedorFiltros select {
 	padding: 5px;
 	margin: 5px;
-	font-family: unset;
+	font-family: 'Montserrat';
 	font-size: 14px;
 	background-color: #76c893;
 	color: black;
 	/*border-radius: 5px;*/
 	filter: drop-shadow(1px 2px 2px grey);
+	font-weight: bold;
+	border-radius: 50px;
+	border: none;
+}
+
+.contenedorFiltrosDark {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 30px;
+	font-family: 'Montserrat';
+}
+
+.contenedorFiltrosDark select {
+	padding: 5px;
+	margin: 5px;
+	font-family: 'Montserrat';
+	font-size: 14px;
+	background-color: #76c893;
+	color: black;
+	/*border-radius: 5px;*/
 	font-weight: bold;
 	border-radius: 50px;
 	border: none;

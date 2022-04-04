@@ -1,5 +1,11 @@
 import {useEffect, useState} from 'react';
-import {getAllDogs, orderDogs, filterDogs, getTemperaments, filterByTemperament} from '../redux/actions.js';
+import {
+	getAllDogs, 
+	orderDogs, 
+	filterDogs, 
+	getTemperaments, 
+	filterByTemperament,
+} from '../redux/actions.js';
 import {useDispatch, useSelector} from 'react-redux';
 import DogCard from './DogCard.jsx';
 import Paginado from './Paginado.jsx';
@@ -11,7 +17,8 @@ const Home = (props) => {
 	const dispatch = useDispatch();
 	const allDogs = useSelector((state) => state.dogs);
 	const allTemperaments = useSelector(state => state.temperaments);
-	
+	const [isDarkModeActive, setIsDarkModeActive] = useState(localStorage.getItem("theme") === "dark" ? true : false);
+
 	const [currentPage, setCurrentPage] = useState(1);
 	const dogsByPage = 8;
 	const dogsToRender = allDogs.slice((currentPage * dogsByPage) - dogsByPage, currentPage * dogsByPage);
@@ -26,6 +33,15 @@ const Home = (props) => {
 	useEffect(() => {
 		dispatch(getTemperaments());
 	}, [dispatch])
+
+	useEffect(() => {
+		let body = document.getElementById('body');
+		if(!isDarkModeActive){
+			body.style.setProperty("--bg", '#EAEAE9')//body.style.backgroundColor = '#EAEAE9'
+		}else{
+			body.style.setProperty("--bg", 'hsl(0, 0%, 7%)')//body.style.backgroundColor = 'hsl(0, 0%, 7%)'
+		}
+	}, [isDarkModeActive])
 	
 	const handleOrder = (e) => {
 		e.preventDefault();
@@ -42,10 +58,20 @@ const Home = (props) => {
 		dispatch(filterByTemperament(e.target.value));
 	}
 
+	const handleClick = (e) => {
+		e.preventDefault();
+		if(!isDarkModeActive){
+			localStorage.setItem("theme", "dark");
+			setIsDarkModeActive(true);
+		}else{
+			localStorage.setItem("theme", "light");
+			setIsDarkModeActive(false)
+		}
+	};
+
 	return(
-		<div className={s.contenedor} >
-			
-			<div className={s.contenedorFiltros} >
+		<div>
+			<div className={!isDarkModeActive ? s.contenedorFiltros : s.contenedorFiltrosDark} >
 				<div>
 					<select name="temperament" defaultValue='Filter by temperament'
 					onChange={(e) => FilterByTemperament(e)}>
@@ -74,13 +100,26 @@ const Home = (props) => {
 						<option value="asc weight">Lowest to Highest</option>
 					</select>
 				</div>
+				{
+				!isDarkModeActive ? 
+				<button 
+				onClick={(e)=>handleClick(e)} 
+				className={s.darkMode}
+				>Night</button>
+				:
+				<button 
+				onClick={(e)=>handleClick(e)} 
+				className={s.lightMode}
+				>Day</button>
+				}
 			</div>
 
 			<div className={s.contenedorDogs} >
 				{
 					dogsToRender.length > 0 ? 
 					dogsToRender.map(d => (
-					<DogCard 
+					<DogCard
+					mode = {isDarkModeActive} 
 					key = {d.id}
 					name = {d.name}
 					temperament = {d.temperament}
@@ -92,6 +131,7 @@ const Home = (props) => {
 					allDogs.length > 0 ? 
 					allDogs.map(d => (
 					<DogCard 
+					mode = {isDarkModeActive}
 					key = {d.id}
 					name = {d.name}
 					temperament = {d.temperament}
@@ -110,6 +150,7 @@ const Home = (props) => {
 			<div className={s.paginas} >
 			{dogsToRender.length ? 
 				<Paginado 
+				mode = {isDarkModeActive}
 				allDogs={allDogs}
 				dogsByPage={dogsByPage}
 				paginado={paginado}

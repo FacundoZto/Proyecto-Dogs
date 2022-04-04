@@ -6,7 +6,7 @@ const initialState = {
 	dogs: [],
 	temperaments: [],
 	copyDogs: [],
-	dogDetail: {}
+	dogDetail: {},
 };
 
 const reducer = (state = initialState, action) => {
