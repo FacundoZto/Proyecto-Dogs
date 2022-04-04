@@ -1,8 +1,10 @@
+<div>
 <img src="./Imagenes/Landing.png"  widht='90px' height='160px' />
-<img src="./Imagenes/Home.png"  widht='90px' height='160px' />
-<img src="./Imagenes/Paginado.png"  widht='90px' height='160px' />
-<img src="./Imagenes/DogDetail.png"  widht='90px' height='160px' />
+<img src="./Imagenes/Home.png"   widht='90px' height='160px' />
+<img src="./Imagenes/Paginado.png"   widht='90px' height='160px' />
+<img src="./Imagenes/DogDetail.png"   widht='90px' height='160px' />
 <img src="./Imagenes/FormCreate.png"  widht='90px' height='160px' />
+</div>
 
   #
 
