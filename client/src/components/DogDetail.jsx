@@ -1,6 +1,6 @@
 import {Link, useParams} from 'react-router-dom';
 import {dogDetail} from '../redux/actions.js';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import s from '../css/DogDetail.module.css';
 import loading from '../css/images/loading-gif.gif';
@@ -9,7 +9,15 @@ const DogDetail = () => {
 
 	const params = useParams();
 	const dispatch = useDispatch();
+	const [isDarkModeActive] = useState(localStorage.getItem("theme") === "dark" ? true : false);
 	
+	useEffect(() => {
+		let body = document.getElementById('body');
+		if(isDarkModeActive){
+			body.style.backgroundColor = 'hsl(0, 0%, 7%)'
+		}
+	}, [isDarkModeActive]);
+
 	useEffect(() => {
 		dispatch(dogDetail(params.id))
 	}, [dispatch, params.id]) 
@@ -19,11 +27,11 @@ const DogDetail = () => {
 	return(
 		<div className={s.contenedor} >
 			<Link to='/home'>
-				<button className={s.home} >GO BACK</button>
+				<button className={isDarkModeActive ? s.homeDarkMode : s.home} >GO BACK</button>
 			</Link>
 			
 			{dog.name ? 
-			<div className={s.subcontenedor} >
+			<div className={isDarkModeActive ? s.subcontenedorDarkMode : s.subcontenedor} >
 			<div>
 				<img src={dog.image} alt="" />
 				<h2>{dog.name}</h2>

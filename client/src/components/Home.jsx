@@ -37,9 +37,11 @@ const Home = (props) => {
 	useEffect(() => {
 		let body = document.getElementById('body');
 		if(!isDarkModeActive){
-			body.style.setProperty("--bg", '#EAEAE9')//body.style.backgroundColor = '#EAEAE9'
+			//body.style.setProperty("--bg", '#EAEAE9')//
+			body.style.backgroundColor = '#EAEAE9'
 		}else{
-			body.style.setProperty("--bg", 'hsl(0, 0%, 7%)')//body.style.backgroundColor = 'hsl(0, 0%, 7%)'
+			//body.style.setProperty("--bg", 'hsl(0, 0%, 7%)')//
+			body.style.backgroundColor = 'hsl(0, 0%, 7%)'
 		}
 	}, [isDarkModeActive])
 	

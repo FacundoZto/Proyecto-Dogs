@@ -36,6 +36,24 @@
 	  color: white;
 	}
 
+.homeDarkMode {
+	border: none;
+	border-radius: 50px;
+	background-color: #76c893;
+	color: black;
+	padding: 6px 15px;
+	font-size: 20px;
+	cursor: pointer;
+	font-family: 'Montserrat';
+	font-weight: 500;
+	margin-top: 30px;
+	width: 100px;
+}
+
+.homeDarkMode:hover {
+	  color: white;
+	}
+
 .formContenedor {
 	text-align: end;
 	/*background-color: #eeeeed;*/
@@ -97,9 +115,9 @@
 	border: none;
 	background-color: #76c893;
 	color: black;
-	padding: 6px 10px;
+	padding: 4px 8px;
 	margin-top: 5px;
-	font-size: 15px;
+	font-size: 13px;
 	cursor: pointer;
 	font-family: 'Montserrat';
 	font-weight: 500;
@@ -114,7 +132,7 @@
 
 .crear button[disabled] {
 	opacity: 0.5;
-	background-color: #76c893;
+	background-color: grey;
 	border-radius: 50px;
 }
 
@@ -122,7 +140,7 @@
 	border: none;
 	background-color: #76c893;
 	color: black;
-	padding: 6px 10px;
+	padding: 8px 12px;
 	margin-top: 5px;
 	font-size: 15px;
 	cursor: pointer;
@@ -131,7 +149,68 @@
 	filter: drop-shadow(1px 2px 2px grey);
 	border-radius: 50px;
 }
-/*.crear button:hover {
-  background-color: lightgoldenrodyellow;
-  color: black;
-}*/
+.crear button:hover {
+  background-color: lightgreen;
+}
+
+/*------------------*/
+
+.formContenedorDarkMode {
+	text-align: end;
+	/*background-color: #eeeeed;*/
+	/*filter: drop-shadow(1px 2px 2px grey);*/
+	/*border: solid lightgoldenrodyellow 1px;*/
+	margin-top: 40px;
+	border-radius: 10px;
+	/*filter: drop-shadow(4px 6px 8px black);*/
+}
+
+.formContenedorDarkMode h2 {
+	text-align: center;
+	color: ghostwhite;
+	font-family: 'Montserrat';
+}
+
+.formContenedorDarkMode div {
+	margin-bottom: 15px;
+	padding: 10px;
+}
+
+.formContenedorDarkMode label {
+	/*color: #202326;*/
+	color: white;
+	margin-right: 10px;
+	font-family: 'Montserrat';
+}
+
+.infoDarkMode input {
+	border-radius: 3px;
+	border: none;
+}
+
+.infoDarkMode section {
+	color: brown;
+	position: absolute;
+	margin-left: 30px;
+}
+
+.temperamentosDarkMode {
+	width: 310px;
+	color: white;
+	text-align: center;
+	font-family: 'Montserrat';
+	filter: none;
+}
+
+.borrarDarkMode {
+	border: none;
+	background-color: #76c893;
+	color: black;
+	padding: 4px 8px;
+	margin-top: 5px;
+	font-size: 13px;
+	cursor: pointer;
+	font-family: 'Montserrat';
+	font-weight: 500;
+	border-radius: 50px;
+}

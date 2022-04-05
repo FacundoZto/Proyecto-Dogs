@@ -1,6 +1,6 @@
 body {
 	background-color: #EAEAE9;
-	background-color: var(--bg);
+	/*background-color: var(--bg);*/
 }
 
 .contenedor {
