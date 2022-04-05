@@ -71,9 +71,19 @@ const Home = (props) => {
 		}
 	};
 
+	const reload = (e) => {
+		e.preventDefault();
+		dispatch(getAllDogs());
+	}
+
 	return(
 		<div>
 			<div className={!isDarkModeActive ? s.contenedorFiltros : s.contenedorFiltrosDark} >
+				<button 
+				className={isDarkModeActive ? s.reloadDarkMode : s.reload} 
+				onClick={reload}>
+				Reload Dogs
+				</button>
 				<div>
 					<select name="temperament" defaultValue='Filter by temperament'
 					onChange={(e) => FilterByTemperament(e)}>

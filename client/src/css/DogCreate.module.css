@@ -5,55 +5,6 @@
 	/*height: 100vh;*/
 }
 
-.prueba {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	/*background-color: rgba(27, 27, 27, 0.7);
-  width: 700px;
-  height: 900px;
-  margin-top: auto;
-  margin-bottom: auto;
-  border-radius: 20px;*/
-}
-
-.home {
-	border: none;
-	border-radius: 50px;
-	background-color: #76c893;
-	color: black;
-	padding: 6px 15px;
-	font-size: 20px;
-	cursor: pointer;
-	font-family: 'Montserrat';
-	font-weight: 500;
-	filter: drop-shadow(1px 2px 2px grey);
-	margin-top: 30px;
-	width: 100px;
-}
-
-	.home:hover {
-	  color: white;
-	}
-
-.homeDarkMode {
-	border: none;
-	border-radius: 50px;
-	background-color: #76c893;
-	color: black;
-	padding: 6px 15px;
-	font-size: 20px;
-	cursor: pointer;
-	font-family: 'Montserrat';
-	font-weight: 500;
-	margin-top: 30px;
-	width: 100px;
-}
-
-.homeDarkMode:hover {
-	  color: white;
-	}
-
 .formContenedor {
 	text-align: end;
 	/*background-color: #eeeeed;*/

@@ -68,6 +68,22 @@ body {
 	font-weight: bold;
 	border-radius: 50px;
 	border: none;
+	cursor: pointer;
+}
+
+.reload {
+	padding: 5px;
+	margin: 5px;
+	font-family: 'Montserrat';
+	font-size: 14px;
+	background-color: #76c893;
+	color: black;
+	/*border-radius: 5px;*/
+	filter: drop-shadow(1px 2px 2px grey);
+	font-weight: bold;
+	border-radius: 50px;
+	border: none;
+	cursor: pointer;
 }
 
 .contenedorFiltrosDark {
@@ -88,6 +104,7 @@ body {
 	font-weight: bold;
 	border-radius: 50px;
 	border: none;
+	cursor: pointer;
 }
 
 .paginas {
@@ -123,3 +140,17 @@ body {
 	width: 350px;
 	height: 350px;
 }*/
+
+.reloadDarkMode {
+	padding: 5px;
+	margin: 5px;
+	font-family: 'Montserrat';
+	font-size: 14px;
+	background-color: #76c893;
+	color: black;
+	/*border-radius: 5px;*/
+	font-weight: bold;
+	border-radius: 50px;
+	border: none;
+	cursor: pointer;
+}

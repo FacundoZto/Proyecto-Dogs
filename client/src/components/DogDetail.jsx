@@ -1,4 +1,4 @@
-import {Link, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {dogDetail} from '../redux/actions.js';
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
@@ -26,9 +26,6 @@ const DogDetail = () => {
 
 	return(
 		<div className={s.contenedor} >
-			<Link to='/home'>
-				<button className={isDarkModeActive ? s.homeDarkMode : s.home} >GO BACK</button>
-			</Link>
 			
 			{dog.name ? 
 			<div className={isDarkModeActive ? s.subcontenedorDarkMode : s.subcontenedor} >

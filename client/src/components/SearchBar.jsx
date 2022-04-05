@@ -1,7 +1,6 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import {getDogByName} from '../redux/actions.js';
-import {getAllDogs} from '../redux/actions.js';
 import {Link} from 'react-router-dom';
 import s from '../css/SearchBar.module.css';
 
@@ -9,11 +8,6 @@ const SearchBar = () => {
 
 	const dispatch = useDispatch();
 	const [search, setSearch] = useState('');
-
-	const reload = (e) => {
-		e.preventDefault();
-		dispatch(getAllDogs());
-	};
 
 	const handleChange = (e) => {
 		e.preventDefault();
@@ -32,9 +26,9 @@ const SearchBar = () => {
 	return (
 		<div className={s.contenedor} >
 
-			<button onClick={reload}>
-				DOGS
-			</button>
+			<Link to='/home'>
+				<button>HOME</button>
+			</Link>
 
 			<div>
 				<input className={s.barra}

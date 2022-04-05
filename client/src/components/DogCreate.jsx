@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {createDog, getTemperaments} from '../redux/actions.js';
-import {Link} from 'react-router-dom';
 import s from '../css/DogCreate.module.css';
 
 const validate = (input) => {
@@ -166,12 +165,6 @@ const DogCreate = (props) => {
 console.log(isDarkModeActive);
 	return(
 		<div className={s.contenedor}>
-			<div className={s.prueba}>
-			<div>
-				<Link to='/home'>
-					<button className={isDarkModeActive ? s.homeDarkMode : s.home} >Home</button>
-				</Link>
-			</div>
 
 			<div className={isDarkModeActive ? s.formContenedorDarkMode : s.formContenedor} >
 				<h2>Create Dog</h2>
@@ -249,7 +242,7 @@ console.log(isDarkModeActive);
 
 				</form>
 			</div>
-			</div>
+			
 		</div>
 		)
 }
