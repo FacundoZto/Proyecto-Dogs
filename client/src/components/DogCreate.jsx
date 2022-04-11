@@ -2,89 +2,9 @@ import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {createDog, getTemperaments} from '../redux/actions.js';
 import s from '../css/DogCreate.module.css';
-
-const validate = (input) => {
-	let errors = {};
-
-	if(!input.name || input.name.trim().length === 0) {
-		errors.name = 'Complete name';
-	} else if(!/^[a-zA-Z ]*$/.test(input.name)) { 
-		errors.name = 'Alphabetic characters only'
-	} else if(input.name.length > 40) {
-		errors.name = 'Name too long';
-	}
-
-	if(!input.heightMin) {
-		errors.heightMin = 'Complete minimum height';
-	} else if(!/^\d+$/.test(input.heightMin)) {
-		errors.heightMin = 'Numeric characters only';
-	} else if(input.heightMin.length > 3) {
-		errors.heightMin = 'Only 3 numeric characters'
-	} else if(parseInt(input.heightMin) < 1 || parseInt(input.heightMin) > parseInt(input.heightMax) || 
-		parseInt(input.heightMin) > 200) {
-		errors.heightMin = 'Must be less than the maximum height';
-	} 
-
-	if(!input.heightMax) {
-		errors.heightMax = 'Complete maximum height';
-	} else if(!/^\d+$/.test(input.heightMax)) {
-		errors.heightMax = 'Numeric characters only';
-	} else if(input.heightMax.length > 3) {
-		errors.heightMax = 'Only 3 numeric characters'
-	} else if( parseInt(input.heightMax) < 5 || parseInt(input.heightMax) < parseInt(input.heightMin) || 
-		parseInt(input.heightMax) > 200) {
-		errors.heightMax = 'Must be greater than the minimum height';
-	}
-
-	if(!input.weightMin) {
-		errors.weightMin = 'Complete minimum weight';
-	} else if(!/^\d+$/.test(input.weightMin)) {
-		errors.weightMin = 'Numeric characters only';
-	} else if(input.weightMin.length > 3) {
-		errors.weightMin = 'Only 3 numeric characters'
-	} else if( parseInt(input.weightMin) <= 0 || parseInt(input.weightMin) > parseInt(input.weightMax) || 
-		parseInt(input.weightMin) > 100) {
-		errors.weightMin = 'Must be less than the maximum weight';
-	}
-
-	if(!input.weightMax) {
-		errors.weightMax = 'Complete maximum weight';
-	} else if(!/^\d+$/.test(input.weightMax)) {
-		errors.weightMax = 'Numeric characters only';
-	} else if(input.weightMax.length > 3) {
-		errors.weightMax = 'Only 3 numeric characters'
-	} else if( parseInt(input.weightMax) <= 0 || parseInt(input.weightMax) < parseInt(input.weightMin) || 
-		parseInt(input.weightMax) > 200) {
-		errors.weightMax = 'Must be greater than the minimum weight';
-	}
-
-	if(!input.life_span) {
-		errors.life_span = 'Complete life span';
-	} else if(!/^\d+$/.test(input.life_span)) {
-		errors.life_span = 'Numeric characters only';
-	} else if(input.life_span.length > 2) {
-		errors.life_span = 'Only 2 numeric characters'
-	} else if( input.life_span <= 0 ) {
-		errors.life_span = 'Must be greater than 0';
-	}
-	
-	if(!input.image || input.image.trim().length === 0) {
-		errors.image = 'Complete with image address'
-	} else if(input.image.length > 255) {
-		errors.image = 'The address is too long';
-	} else if(!input.image.includes('jpg') && !input.image.includes('jpeg') && 
-		!input.image.includes('png')) {
-		errors.image = 'Allowed format: jpg, jpeg or png';
-	} else if(!input.image.includes('https') && !input.image.includes('http') && 
-		!input.image.includes('ftp')) {
-		errors.image = 'Must be an url image';
-	}
-
-	return errors;
-}
+import {validate, isEmpty} from './validateForm.js';
 
 const DogCreate = (props) => {
-
 	const temperaments = useSelector(state => state.temperaments);
 	const dispatch = useDispatch();
 	const [isDarkModeActive] = useState(localStorage.getItem("theme") === "dark" ? true : false);
@@ -141,18 +61,28 @@ const DogCreate = (props) => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		let response = await dispatch(createDog(input));
-		alert(response)
-		setInput({
-			name: '',
-			heightMin: '',
-			heightMax: '',
-			weightMin: '',
-			weightMax: '',
-			life_span: '',
-			image: '',
-			temperament: []
-		})
+		if(Object.entries(isEmpty({
+			...input,
+			[e.target.name]: e.target.value
+		})).length !== 0){
+			setErrors(isEmpty({
+				...input,
+				[e.target.name]: e.target.value
+			}))
+		} else{
+			let response = await dispatch(createDog(input));
+			alert(response)
+			setInput({
+				name: '',
+				heightMin: '',
+				heightMax: '',
+				weightMin: '',
+				weightMax: '',
+				life_span: '',
+				image: '',
+				temperament: []
+			})
+		}
 	};
 
 	const handleDeleteTemp = (e) => {
@@ -162,7 +92,7 @@ const DogCreate = (props) => {
 			temperament: input.temperament.filter((t, i) => i !== input.temperament.length - 1 && t)
 		})
 	}
-console.log(isDarkModeActive);
+
 	return(
 		<div className={s.contenedor}>
 
@@ -216,6 +146,7 @@ console.log(isDarkModeActive);
 							{temperaments && temperaments.map(t => (
 							<option value={t.name} key={t.id}>{t.name}</option>))}
 						</select>
+						{errors.temperament && <section>{errors.temperament}</section>}
 			
 						<div className={isDarkModeActive ? s.temperamentosDarkMode : s.temperamentos} >
 						{input.temperament.map((t, i) => (
@@ -228,9 +159,7 @@ console.log(isDarkModeActive);
 					</div>
 
 					<div className={s.crear} >
-					{!input.name || errors.name || errors.heightMin || errors.heightMax 
-					|| errors.heightMin || errors.weightMin || errors.weightMax 
-					|| errors.life_span || errors.image || input.temperament.length === 0 ? 
+					{Object.entries(errors).length !== 0 ? 
 						<button type='submit' disabled>
 							Create
 						</button>  
