@@ -58,6 +58,7 @@ const DogCreate = (props) => {
 			}
 		}
 	};
+	console.log(input)
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -146,15 +147,15 @@ const DogCreate = (props) => {
 							{temperaments && temperaments.map(t => (
 							<option value={t.name} key={t.id}>{t.name}</option>))}
 						</select>
-						{errors.temperament && <section>{errors.temperament}</section>}
+						{input.temperament.length === 0 && <section>{errors.temperament}</section>}
 			
 						<div className={isDarkModeActive ? s.temperamentosDarkMode : s.temperamentos} >
 						{input.temperament.map((t, i) => (
 							i !== input.temperament.length - 1 ? t + ', ' : t))}
 						</div>
 						<button onClick={handleDeleteTemp} className={isDarkModeActive ? s.borrarDarkMode : s.borrar} >
-							Remove<br/>
-							Temperament
+							remove<br/>
+							temperament
 						</button>
 					</div>
 
