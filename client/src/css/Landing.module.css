@@ -1,9 +1,12 @@
 .contenedor {
-	background: url('./images/dogbg.jpg') no-repeat fixed;
+	background: url('./images/dogbg.jpg');
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
+  	background-position: center center;
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
 
   	height: 100vh;
 
@@ -30,4 +33,17 @@
 	box-shadow: 0 0 40px 40px #76c893 inset;
 	color: black;
 	border: none;
+}
+
+@media(max-width: 700px) {
+	.contenedor {
+		background: url('./images/golden.jpg');
+		-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	  	background-size: cover;
+	  	background-position: center center;
+	  	background-repeat: no-repeat;
+	  	background-attachment: fixed;
+	}
 }
