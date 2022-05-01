@@ -26,7 +26,7 @@ const SearchBar = () => {
 	return (
 		<div className={s.contenedor} >
 
-			<Link to='/home'>
+			<Link to='/home' style={{textDecorationLine: 'none'}}>
 				<button>HOME</button>
 			</Link>
 
@@ -42,7 +42,7 @@ const SearchBar = () => {
 				<button type='submit' onClick={onSubmit}>SEARCH</button>
 			</div>
 			
-			<Link to='/create'>
+			<Link to='/create' style={{textDecorationLine: 'none'}}>
 				<button>
 					CREATE DOG
 				</button>

@@ -110,3 +110,12 @@
 	align-self: center;
 	/*opacity: 90%;*/
 }
+
+@media(max-width: 475px) {
+	.numero{
+		display: none;
+	}
+	.numeroDark{
+		display: none;
+	}
+}

@@ -1,17 +1,32 @@
 .contenedor {
-	display: flex;
+	/*display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: center;*/
 	/*height: 100vh;*/
 }
 
+
+form div {
+	display: flex;
+	flex-direction: column;
+	width: 550px;
+	margin: auto;
+}
+
+form label {
+	align-self: flex-start;
+}
+
 .formContenedor {
-	text-align: end;
+	/*text-align: end;*/
+
 	/*background-color: #eeeeed;*/
 	/*filter: drop-shadow(1px 2px 2px grey);*/
 	/*border: solid lightgoldenrodyellow 1px;*/
 	margin-top: 25px;
-	border-radius: 10px;
+	/*border-radius: 10px;*/
+	/*width: 600px;
+	margin: auto;*/
 	/*filter: drop-shadow(4px 6px 8px black);*/
 }
 
@@ -19,7 +34,6 @@
 	text-align: center;
 	color: #202326;
 	font-family: 'Montserrat';
-	filter: drop-shadow(1px 2px 2px grey);
 }
 
 .formContenedor div {
@@ -35,15 +49,17 @@
 }
 
 .info section {
-	color: brown;
+	color: #FF244B;
 	position: absolute;
-	margin-left: 30px;
+	align-self: flex-end;
+	/*margin-left: 30px;*/
 }
 
 .info input {
 	border-radius: 3px;
 	border: none;
 	filter: drop-shadow(1px 2px 2px grey);
+	height: 25px;
 }
 
 .info select {
@@ -52,6 +68,7 @@
 	border-radius: 3px;
 	border: none;
 	filter: drop-shadow(1px 2px 2px grey);
+	height: 25px;
 }
 
 .temperamentos {
@@ -74,11 +91,15 @@
 	font-weight: 500;
 	filter: drop-shadow(1px 2px 2px grey);
 	border-radius: 50px;
+	/*width: 120px;*/
+	width: 250px;
 }
 
 .crear {
 	display: flex;
 	justify-content: center;
+	/*height: 55px;*/
+	width: 200px;
 }
 
 .crear button[disabled] {
@@ -137,12 +158,21 @@
 .infoDarkMode input {
 	border-radius: 3px;
 	border: none;
+	height: 25px;
+}
+
+.infoDarkMode select {
+	background-color: white;
+	font-family: 'Montserrat';
+	border-radius: 3px;
+	border: none;
+	height: 25px;
 }
 
 .infoDarkMode section {
-	color: brown;
+	color: #FF244B;
 	position: absolute;
-	margin-left: 30px;
+	align-self: flex-end;
 }
 
 .temperamentosDarkMode {
@@ -164,4 +194,50 @@
 	font-family: 'Montserrat';
 	font-weight: 500;
 	border-radius: 50px;
+	width: 250px;
+}
+
+@media(max-width: 600px) {
+	.formContenedor div {
+		display: flex;
+		flex-direction: column;
+		width: 400px;
+	}
+}
+
+@media(max-width: 440px) {
+	.formContenedor div {
+		display: flex;
+		flex-direction: column;
+		width: 250px;
+		/*height: 70px;*/
+	}
+	.formContenedor section {
+		position: absolute;
+		justify-content: flex-end;
+		display: contents;
+	}
+}
+
+
+
+@media(max-width: 600px) {
+	.formContenedorDarkMode div {
+		display: flex;
+		flex-direction: column;
+		width: 400px;
+	}
+}
+
+@media(max-width: 440px) {
+	.formContenedorDarkMode div {
+		display: flex;
+		flex-direction: column;
+		width: 250px;
+	}
+	.formContenedorDarkMode section {
+		position: absolute;
+		justify-content: flex-end;
+		display: contents;
+	}
 }

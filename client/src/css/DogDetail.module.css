@@ -25,7 +25,6 @@
 
 .subcontenedor div p {
 	color: black;
-	font-weight: bold;
 	font-family: 'Montserrat';
 }
 
@@ -71,3 +70,31 @@
 	height: 400px;
 	border-radius: 10px 10px 0px 0px;
 }
+
+
+@media(max-width: 530px) {
+	.subcontenedor{
+		width: 350px;
+	}
+	.subcontenedor div{
+		width: 350px;
+	}
+	.subcontenedor img{
+		width: 350px;
+		height: 300px;
+	}
+}
+
+@media(max-width: 530px) {
+	.subcontenedorDarkMode{
+		width: 350px;
+	}
+	.subcontenedorDarkMode div{
+		width: 350px;
+	}
+	.subcontenedorDarkMode img{
+		width: 350px;
+		height: 300px;
+	}
+}
+

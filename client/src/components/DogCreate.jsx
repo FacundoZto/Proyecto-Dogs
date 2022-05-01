@@ -101,47 +101,47 @@ const DogCreate = (props) => {
 				<h2>Create Dog</h2>
 				<form action="" onSubmit={handleSubmit}>
 					<div className={isDarkModeActive ? s.infoDarkMode : s.info} >
-						<label htmlFor="">Name: </label>
+						<label htmlFor="">Name</label>
 						<input type="text" name='name' onChange={handleChange} value={input.name} />
 						{errors.name && <section>{errors.name}</section>}
 					</div>
 
 					<div className={isDarkModeActive ? s.infoDarkMode : s.info} >
-						<label htmlFor="">Minimum height (cm): </label>
+						<label htmlFor="">Minimum height (cm)</label>
 						<input type="text" name='heightMin' onChange={handleChange} value={input.heightMin} />
 						{errors.heightMin && <section>{errors.heightMin}</section>}
 					</div>
 					<div className={isDarkModeActive ? s.infoDarkMode : s.info} >
-						<label htmlFor="">Maximum height (cm): </label>
+						<label htmlFor="">Maximum height (cm)</label>
 						<input type="text" name='heightMax' onChange={handleChange} value={input.heightMax} />
 						{errors.heightMax && <section>{errors.heightMax}</section>}
 					</div>
 
 					<div className={isDarkModeActive ? s.infoDarkMode : s.info} >
-						<label htmlFor="">Minimum weight (kg): </label>
+						<label htmlFor="">Minimum weight (kg)</label>
 						<input type="text" name='weightMin' onChange={handleChange} value={input.weightMin} />
 						{errors.weightMin && <section>{errors.weightMin}</section>}
 					</div>
 					<div className={isDarkModeActive ? s.infoDarkMode : s.info} >
-						<label htmlFor="">Maximum weight (kg): </label>
+						<label htmlFor="">Maximum weight (kg)</label>
 						<input type="text" name='weightMax' onChange={handleChange} value={input.weightMax} />
 						{errors.weightMax && <section>{errors.weightMax}</section>}
 					</div>
 
 					<div className={isDarkModeActive ? s.infoDarkMode : s.info} >
-						<label htmlFor="">Life span: </label>
+						<label htmlFor="">Life span</label>
 						<input type="text" name='life_span' onChange={handleChange} value={input.life_span} />
 						{errors.life_span && <section>{errors.life_span}</section>}
 					</div>
 
 					<div className={isDarkModeActive ? s.infoDarkMode : s.info} >
-						<label htmlFor="">Image: </label>
+						<label htmlFor="">Image</label>
 						<input type="text" name='image' onChange={handleChange} value={input.image}/>
 						{errors.image && <section>{errors.image}</section>}
 					</div>
 
 					<div className={isDarkModeActive ? s.infoDarkMode : s.info} >
-						<label htmlFor="">Temperament: </label>
+						<label htmlFor="">Temperament</label>
 						<select name="temperament" defaultValue='Select temperament' onChange={handleSelect}>
 							<option disabled>Select temperament</option>
 							{temperaments && temperaments.map(t => (
@@ -154,19 +154,18 @@ const DogCreate = (props) => {
 							i !== input.temperament.length - 1 ? t + ', ' : t))}
 						</div>
 						<button onClick={handleDeleteTemp} className={isDarkModeActive ? s.borrarDarkMode : s.borrar} >
-							remove<br/>
-							temperament
+							Remove temperament
 						</button>
 					</div>
 
 					<div className={s.crear} >
 					{Object.entries(errors).length !== 0 ? 
 						<button type='submit' disabled>
-							Create
+							CREATE
 						</button>  
 						: 
 						<button type='submit'>
-							Create
+							CREATE
 						</button> }
 					</div>
 

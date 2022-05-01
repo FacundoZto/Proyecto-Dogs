@@ -56,6 +56,27 @@ body {
 	font-family: 'Montserrat';
 }
 
+@media (max-width: 500px) {
+	.contenedorFiltros {
+		flex-direction: column;
+		align-items: center;
+	}
+	.contenedorFiltros div {
+		display: grid;
+		margin-bottom: 5px;
+	}
+}
+@media (max-width: 500px) {
+	.contenedorFiltrosDark {
+		flex-direction: column;
+		align-items: center;
+	}
+	.contenedorFiltrosDark div {
+		display: grid;
+		margin-bottom: 5px;
+	}
+}  
+
 .contenedorFiltros select {
 	padding: 5px;
 	margin: 5px;

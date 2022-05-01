@@ -10,6 +10,12 @@
 	-ms-transition:all .2s ease; /* Opera */
 }
 
+@media (max-width: 450px) {
+	.card {
+		width: 275px;
+	}
+}
+
 .card2 {
 	width: 300px;
 	height: 430px;
@@ -20,6 +26,12 @@
 	-moz-transition:all .2s ease; /* Firefox */
 	-o-transition:all .2s ease; /* IE 9 */
 	-ms-transition:all .2s ease; /* Opera */
+}
+
+@media (max-width: 450px) {
+	.card2 {
+		width: 275px;
+	}
 }
 
 .card:hover {
@@ -56,8 +68,18 @@
 	height: 220px;
 }
 
+@media(max-width: 450px){
+	.imagen {
+		width: 275px;
+	}
+	.error {
+		width: 275px;
+	}
+}
+
 .error {
 	width: 300px;
+	height: 220px;
 }
 
 
