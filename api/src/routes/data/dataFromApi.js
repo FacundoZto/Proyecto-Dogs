@@ -1,7 +1,7 @@
 require("dotenv").config();
 const axios = require("axios");
 const { API_KEY } = process.env;
-//TRAIGO LA DATA DE LA API
+// TRAIGO LA DATA DE LA API
 
 const dataFromApi = async () => {
   try {
